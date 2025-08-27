@@ -289,7 +289,8 @@ function LandingPage() {
                                                 <Button 
                                                     size="sm"
                                                     onClick={() => joinRoom(room.id)}
-                                                    className="bg-green-600 hover:bg-green-700 text-white"
+                                                    disabled={!userName.trim()}
+                                                    className="bg-green-600 hover:bg-green-700 text-white disabled:bg-gray-400"
                                                 >
                                                     Join
                                                 </Button>
