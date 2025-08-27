@@ -143,6 +143,20 @@ function LandingPage() {
         window.location.href = `/room/${roomIdToJoin}`;
     };
 
+    const joinRoomById = () => {
+        if (!userName.trim()) {
+            toast.error('Please enter your name first');
+            return;
+        }
+        
+        if (!roomId.trim()) {
+            toast.error('Please enter a room ID');
+            return;
+        }
+
+        joinRoom(roomId);
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
             <div className="container mx-auto px-4 py-16">
