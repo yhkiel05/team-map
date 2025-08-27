@@ -256,9 +256,10 @@ function LandingPage() {
                                         className="bg-white border-gray-200"
                                     />
                                     <Button 
-                                        onClick={() => joinRoom(roomId)}
-                                        disabled={!roomId.trim()}
+                                        onClick={joinRoomById}
+                                        disabled={!roomId.trim() || !userName.trim()}
                                         variant="outline"
+                                        className="whitespace-nowrap"
                                     >
                                         Join
                                     </Button>
