@@ -369,11 +369,16 @@ function MapView() {
 
     const fetchRoomData = async () => {
         try {
+            setLoading(true);
             const response = await axios.get(`${API}/rooms/${roomId}`);
             setRoom(response.data);
+            setError(null);
         } catch (error) {
             console.error('Error fetching room:', error);
+            setError('Room not found or failed to load');
             toast.error('Room not found');
+        } finally {
+            setLoading(false);
         }
     };
 
