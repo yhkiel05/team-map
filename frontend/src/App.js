@@ -308,6 +308,8 @@ function MapView() {
     const [newPin, setNewPin] = useState({ title: '', description: '', latitude: 0, longitude: 0 });
     const [room, setRoom] = useState(null);
     const [optimalLocation, setOptimalLocation] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const socketRef = useRef(null);
     const mapRef = useRef(null);
 
